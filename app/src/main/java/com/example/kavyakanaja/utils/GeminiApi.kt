@@ -1,5 +1,6 @@
 package com.example.kavyakanaja.utils
 
+import com.example.kavyakanaja.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
@@ -8,98 +9,90 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONArray
 import org.json.JSONObject
+import java.util.concurrent.TimeUnit
 
 object GeminiApi {
 
-    // Get your free API key from https://aistudio.google.com/app/apikey
-    private const val API_KEY = "AIzaSyA2a-XEoYTsdbEdbUKiST6KO9Gkx65v7ww"
-    private const val URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$API_KEY"
+    private val API_KEY: String get() = BuildConfig.GEMINI_API_KEY
 
-    private val client = OkHttpClient()
+    private const val BASE_URL =
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+
+    private val client = OkHttpClient.Builder()
+        .connectTimeout(20, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+        .writeTimeout(20, TimeUnit.SECONDS)
+        .build()
+
+    private fun buildBody(prompt: String): okhttp3.RequestBody {
+        val json = JSONObject().apply {
+            put("contents", JSONArray().apply {
+                put(JSONObject().apply {
+                    put("parts", JSONArray().apply {
+                        put(JSONObject().apply { put("text", prompt) })
+                    })
+                })
+            })
+        }
+        return json.toString().toRequestBody("application/json".toMediaType())
+    }
+
+    private fun parseResponse(body: String): String {
+        return JSONObject(body)
+            .getJSONArray("candidates")
+            .getJSONObject(0)
+            .getJSONObject("content")
+            .getJSONArray("parts")
+            .getJSONObject(0)
+            .getString("text")
+            .trim()
+    }
 
     suspend fun getWordMeaning(word: String): String = withContext(Dispatchers.IO) {
         try {
             val prompt = """
                 The word "$word" is from a classical Kannada poem.
-                Give a simple, short explanation in 2-3 sentences:
-                1. What the word means in English
-                2. How it is used poetically
-                Keep it simple enough for a student to understand.
-                Do not use markdown formatting.
+                Explain in 2-3 simple sentences what this word means in English
+                and how it is used poetically. No bullet points. No markdown.
             """.trimIndent()
 
-            val json = JSONObject().apply {
-                put("contents", JSONArray().apply {
-                    put(JSONObject().apply {
-                        put("parts", JSONArray().apply {
-                            put(JSONObject().apply {
-                                put("text", prompt)
-                            })
-                        })
-                    })
-                })
-            }
+            val request = Request.Builder()
+                .url("$BASE_URL?key=$API_KEY")
+                .post(buildBody(prompt))
+                .addHeader("Content-Type", "application/json")
+                .build()
 
-            val body = json.toString().toRequestBody("application/json".toMediaType())
-            val request = Request.Builder().url(URL).post(body).build()
             val response = client.newCall(request).execute()
-            val responseBody = response.body?.string() ?: return@withContext "Meaning not available."
-
-            val result = JSONObject(responseBody)
-            result
-                .getJSONArray("candidates")
-                .getJSONObject(0)
-                .getJSONObject("content")
-                .getJSONArray("parts")
-                .getJSONObject(0)
-                .getString("text")
-
+            val responseBody = response.body?.string() ?: return@withContext "No response."
+            if (!response.isSuccessful) return@withContext "Error ${response.code}: Check API key."
+            parseResponse(responseBody)
         } catch (e: Exception) {
-            "Could not fetch meaning. Please check your connection."
+            "Error: ${e.message}"
         }
     }
 
-    suspend fun getPoemSummary(poemTitle: String, verses: List<String>): String = withContext(Dispatchers.IO) {
-        try {
-            val verseText = verses.joinToString("\n")
-            val prompt = """
-                This is a classical Kannada poem titled "$poemTitle":
-                $verseText
-                
-                Write a simple 3-4 sentence explanation of what this poem means.
-                Explain the imagery and emotion in simple modern language.
-                Write for a student aged 18-22.
-                Do not use markdown formatting.
-            """.trimIndent()
+    suspend fun getPoemSummary(poemTitle: String, verses: List<String>): String =
+        withContext(Dispatchers.IO) {
+            try {
+                val verseText = verses.filter { it.isNotEmpty() }.joinToString(" / ")
+                val prompt = """
+                    This classical Kannada poem is titled "$poemTitle": $verseText
+                    Write a 3 sentence simple explanation of its meaning and emotion
+                    for a college student. No bullet points. No markdown.
+                """.trimIndent()
 
-            val json = JSONObject().apply {
-                put("contents", JSONArray().apply {
-                    put(JSONObject().apply {
-                        put("parts", JSONArray().apply {
-                            put(JSONObject().apply {
-                                put("text", prompt)
-                            })
-                        })
-                    })
-                })
+                val request = Request.Builder()
+                    .url("$BASE_URL?key=$API_KEY")
+                    .post(buildBody(prompt))
+                    .addHeader("Content-Type", "application/json")
+                    .build()
+
+                val response = client.newCall(request).execute()
+                val responseBody = response.body?.string() ?: return@withContext "No response."
+                if (!response.isSuccessful) return@withContext "Error ${response.code}: Check API key."
+                parseResponse(responseBody)
+            } catch (e: Exception) {
+                "Error: ${e.message}"
             }
-
-            val body = json.toString().toRequestBody("application/json".toMediaType())
-            val request = Request.Builder().url(URL).post(body).build()
-            val response = client.newCall(request).execute()
-            val responseBody = response.body?.string() ?: return@withContext "Summary not available."
-
-            val result = JSONObject(responseBody)
-            result
-                .getJSONArray("candidates")
-                .getJSONObject(0)
-                .getJSONObject("content")
-                .getJSONArray("parts")
-                .getJSONObject(0)
-                .getString("text")
-
-        } catch (e: Exception) {
-            "Could not fetch summary. Please check your connection."
         }
-    }
 }

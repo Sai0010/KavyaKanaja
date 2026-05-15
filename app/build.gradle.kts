@@ -1,3 +1,9 @@
+import java.util.Properties
+
+// Read local.properties
+val localProps = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
+}
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -5,20 +11,29 @@ plugins {
 
 android {
     namespace = "com.example.kavyakanaja"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.kavyakanaja"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // API key from local.properties
+        val geminiKey = localProps.getProperty("GEMINI_API_KEY", "")
+
+        buildConfigField(
+            "String",
+            "GEMINI_API_KEY",
+            "\"$geminiKey\""
+        )
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -34,9 +49,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildFeatures {
-        compose = true
-    }
+//    kotlinOptions {
+//        jvmTarget = "11"
+//    }
 }
 
 dependencies {
@@ -57,4 +72,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("com.google.code.gson:gson:2.10.1")
 }

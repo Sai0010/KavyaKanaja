@@ -18,12 +18,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.kavyakanaja.R
 import com.example.kavyakanaja.model.Poem
 import com.example.kavyakanaja.model.SampleData
 import com.example.kavyakanaja.utils.AudioPlayerManager
-import com.example.kavyakanaja.ui.theme.*
 import com.example.kavyakanaja.utils.FavouritesManager
+import com.example.kavyakanaja.utils.GeminiApi
+import com.example.kavyakanaja.ui.theme.*
+import kotlinx.coroutines.delay
 
 @Composable
 fun PoemDetailScreen(navController: NavController, poemId: Int) {
@@ -34,9 +35,19 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
 
     var showMeaning by remember { mutableStateOf(false) }
     var selectedWord by remember { mutableStateOf<String?>(null) }
-    //val context = LocalContext.current
     var isFavourite by remember {
         mutableStateOf(FavouritesManager.isFavourite(context, poemId))
+    }
+    var currentPosition by remember { mutableIntStateOf(0) }
+    var totalDuration by remember { mutableIntStateOf(0) }
+
+    // Timer — updates every second while playing
+    LaunchedEffect(audioManager.isPlaying) {
+        while (audioManager.isPlaying) {
+            currentPosition = audioManager.getCurrentPosition()
+            totalDuration = audioManager.getTotalDuration()
+            delay(1000)
+        }
     }
 
     DisposableEffect(Unit) {
@@ -50,10 +61,7 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
         )
     }
 
-    Scaffold(
-        containerColor = CreamBackground
-    ) { innerPadding ->
-
+    Scaffold(containerColor = CreamBackground) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -76,12 +84,7 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
                         .clickable { navController.popBackStack() }
                         .padding(horizontal = 16.dp, vertical = 8.dp)
                 ) {
-                    Text(
-                        text = "← Back",
-                        fontFamily = SansFamily,
-                        fontSize = 12.sp,
-                        color = MutedBrown
-                    )
+                    Text("← Back", fontFamily = SansFamily, fontSize = 12.sp, color = MutedBrown)
                 }
                 Box(
                     modifier = Modifier
@@ -105,7 +108,7 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
             // Poem header
             Column(modifier = Modifier.padding(horizontal = 24.dp)) {
                 Text(
-                    text = poem.titleKannada,
+                    poem.titleKannada,
                     fontFamily = SerifFamily,
                     fontSize = 28.sp,
                     color = DeepBrown,
@@ -113,7 +116,7 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
                 )
                 Spacer(modifier = Modifier.height(6.dp))
                 Text(
-                    text = "${poem.authorKannada}  ·  ${poem.year}",
+                    "${poem.authorKannada}  ·  ${poem.year}",
                     fontFamily = SansFamily,
                     fontSize = 12.sp,
                     color = MutedText
@@ -128,7 +131,7 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
                 Spacer(modifier = Modifier.height(24.dp))
             }
 
-            // Poem verses — each word is tappable
+            // Poem verses — each word tappable
             Column(modifier = Modifier.padding(horizontal = 28.dp)) {
                 poem.verses.forEach { line ->
                     if (line.isEmpty()) {
@@ -158,9 +161,8 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-            // Tap hint
             Text(
                 text = "Tap any word for its meaning",
                 fontFamily = SansFamily,
@@ -172,7 +174,12 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
             )
 
             // Audio player
-            AudioPlayerBar(audioManager = audioManager)
+            AudioPlayerBar(
+                audioManager = audioManager,
+                currentPosition = currentPosition,
+                totalDuration = totalDuration,
+                verses = poem.verses
+            )
 
             Spacer(modifier = Modifier.height(12.dp))
 
@@ -188,10 +195,26 @@ fun PoemDetailScreen(navController: NavController, poemId: Int) {
     }
 }
 
+// ── Helpers ───────────────────────────────────────────────────
+
+fun formatTime(ms: Int): String {
+    if (ms <= 0) return "0:00"
+    val secs = (ms / 1000) % 60
+    val mins = ms / 1000 / 60
+    return "$mins:${secs.toString().padStart(2, '0')}"
+}
+
 // ── Audio Player Bar ──────────────────────────────────────────
 
 @Composable
-fun AudioPlayerBar(audioManager: AudioPlayerManager) {
+fun AudioPlayerBar(
+    audioManager: AudioPlayerManager,
+    currentPosition: Int,
+    totalDuration: Int,
+    verses: List<String> = emptyList()
+) {
+    val progress = if (totalDuration > 0) currentPosition.toFloat() / totalDuration else 0f
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -204,12 +227,10 @@ fun AudioPlayerBar(audioManager: AudioPlayerManager) {
     ) {
         Box(
             modifier = Modifier
-                .size(36.dp)
+                .size(38.dp)
                 .clip(RoundedCornerShape(50))
                 .background(WarmBrown)
-                .clickable {
-                    audioManager.togglePlayPause(R.raw.poem_audio_1)
-                },
+                .clickable { audioManager.speakPoem(verses) },
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -221,12 +242,12 @@ fun AudioPlayerBar(audioManager: AudioPlayerManager) {
 
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = if (audioManager.isPlaying) "Playing recitation..." else "Listen to recitation",
+                text = if (audioManager.isPlaying) "Reading poem aloud..." else "Listen to poem",
                 fontFamily = SansFamily,
                 fontSize = 11.sp,
                 color = MutedBrown
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -236,19 +257,27 @@ fun AudioPlayerBar(audioManager: AudioPlayerManager) {
             ) {
                 Box(
                     modifier = Modifier
-                        .fillMaxWidth(if (audioManager.isPlaying) 0.5f else 0f)
+                        .fillMaxWidth(progress.coerceIn(0f, 1f))
                         .fillMaxHeight()
                         .background(WarmBrown)
                 )
             }
         }
 
-        Text(
-            text = if (audioManager.isPlaying) audioManager.getDuration() else "--:--",
-            fontFamily = SansFamily,
-            fontSize = 10.sp,
-            color = MutedText
-        )
+        Column(horizontalAlignment = Alignment.End) {
+            Text(
+                text = formatTime(currentPosition),
+                fontFamily = SansFamily,
+                fontSize = 10.sp,
+                color = MutedBrown
+            )
+            Text(
+                text = formatTime(totalDuration),
+                fontFamily = SansFamily,
+                fontSize = 9.sp,
+                color = HintText
+            )
+        }
     }
 }
 
@@ -260,6 +289,25 @@ fun BhavarthaSection(
     poem: Poem,
     onToggle: () -> Unit
 ) {
+    var aiSummary by remember { mutableStateOf<String?>(null) }
+    var isLoading by remember { mutableStateOf(false) }
+    var errorMsg by remember { mutableStateOf<String?>(null) }
+    var hasFetched by remember { mutableStateOf(false) }
+
+    LaunchedEffect(isExpanded) {
+        if (isExpanded && !hasFetched) {
+            hasFetched = true
+            isLoading = true
+            errorMsg = null
+            try {
+                aiSummary = GeminiApi.getPoemSummary(poem.titleEnglish, poem.verses)
+            } catch (e: Exception) {
+                errorMsg = "Could not load. Check internet."
+            }
+            isLoading = false
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -304,27 +352,59 @@ fun BhavarthaSection(
                         .background(CreamBorder)
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = "This poem by ${poem.authorEnglish} beautifully captures the essence of Karnataka's natural landscape. The imagery of mist-covered mountains, twinkling stars and flowing rivers evokes a deep sense of belonging to the land.",
-                    fontFamily = SansFamily,
-                    fontSize = 13.sp,
-                    color = MutedBrown,
-                    lineHeight = 22.sp
-                )
-                Spacer(modifier = Modifier.height(12.dp))
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(CreamSurface)
-                        .padding(12.dp)
-                ) {
-                    Text(
-                        text = "✦  Connect internet for AI-powered explanation",
-                        fontFamily = SansFamily,
-                        fontSize = 11.sp,
-                        color = WarmBrown
-                    )
+
+                when {
+                    isLoading -> {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(12.dp),
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        ) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(20.dp),
+                                color = WarmBrown,
+                                strokeWidth = 2.dp
+                            )
+                            Text(
+                                text = "Generating AI explanation...",
+                                fontFamily = SansFamily,
+                                fontSize = 13.sp,
+                                color = MutedText
+                            )
+                        }
+                    }
+                    errorMsg != null -> {
+                        Text(
+                            text = errorMsg!!,
+                            fontFamily = SansFamily,
+                            fontSize = 13.sp,
+                            color = MutedText
+                        )
+                    }
+                    aiSummary != null -> {
+                        Text(
+                            text = aiSummary!!,
+                            fontFamily = SansFamily,
+                            fontSize = 13.sp,
+                            color = MutedBrown,
+                            lineHeight = 22.sp
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(CreamSurface)
+                                .padding(10.dp)
+                        ) {
+                            Text(
+                                text = "✦  Powered by Gemini AI",
+                                fontFamily = SansFamily,
+                                fontSize = 11.sp,
+                                color = WarmBrown
+                            )
+                        }
+                    }
                 }
             }
         }

@@ -22,6 +22,7 @@ import com.example.kavyakanaja.ui.theme.*
 
 @Composable
 fun PoetProfileScreen(navController: NavController, poetId: Int) {
+
     val poet = SampleData.poets.find { it.id == poetId } ?: SampleData.poets.first()
     val poetPoems = SampleData.poems.filter { it.poetId == poetId }
 
@@ -31,6 +32,7 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+
             // Back button
             item {
                 Box(
@@ -50,7 +52,7 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
                 }
             }
 
-            // Poet avatar + name
+            // Avatar + Name
             item {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -114,7 +116,12 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
 
             // Bio
             item {
-                Column(modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp)) {
+                Column(
+                    modifier = Modifier.padding(
+                        horizontal = 24.dp,
+                        vertical = 16.dp
+                    )
+                ) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -132,7 +139,7 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
                 }
             }
 
-            // Poems by this poet
+            // Poems by this poet label
             item {
                 Text(
                     text = "POEMS IN COLLECTION",
@@ -140,7 +147,10 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
                     fontSize = 10.sp,
                     color = MutedText,
                     letterSpacing = 1.5.sp,
-                    modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp)
+                    modifier = Modifier.padding(
+                        horizontal = 24.dp,
+                        vertical = 8.dp
+                    )
                 )
             }
 
@@ -156,40 +166,48 @@ fun PoetProfileScreen(navController: NavController, poetId: Int) {
                 }
             } else {
                 items(poetPoems) { poem ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable {
-                                navController.navigate(Screen.PoemDetail.createRoute(poem.id))
+                    Column {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    navController.navigate(
+                                        Screen.PoemDetail.createRoute(poem.id)
+                                    )
+                                }
+                                .padding(horizontal = 24.dp, vertical = 14.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column {
+                                Text(
+                                    text = poem.titleKannada,
+                                    fontFamily = SerifFamily,
+                                    fontSize = 15.sp,
+                                    color = DeepBrown
+                                )
+                                Text(
+                                    text = "${poem.titleEnglish}  ·  ${poem.year}",
+                                    fontFamily = SansFamily,
+                                    fontSize = 11.sp,
+                                    color = MutedText,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
                             }
-                            .padding(horizontal = 24.dp, vertical = 14.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column {
                             Text(
-                                text = poem.titleKannada,
-                                fontFamily = SerifFamily,
-                                fontSize = 15.sp,
-                                color = DeepBrown
-                            )
-                            Text(
-                                text = poem.year,
-                                fontFamily = SansFamily,
-                                fontSize = 11.sp,
-                                color = MutedText,
-                                modifier = Modifier.padding(top = 2.dp)
+                                text = "›",
+                                fontSize = 20.sp,
+                                color = MutedText
                             )
                         }
-                        Text(text = "›", fontSize = 20.sp, color = MutedText)
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 24.dp)
+                                .height(0.5.dp)
+                                .background(CreamBorder)
+                        )
                     }
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 24.dp)
-                            .height(0.5.dp)
-                            .background(CreamBorder)
-                    )
                 }
             }
 
