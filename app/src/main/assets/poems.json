@@ -1,0 +1,854 @@
+[
+  {
+    "id": 1,
+    "titleKannada": "ಹೊಂಗನಸು",
+    "titleEnglish": "Golden Dream",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1945",
+    "category": "Classical",
+    "poetId": 1,
+    "verses": [
+      "ಮಲೆಯ ಮೇಲೆ ಮಂಜಿನ ತೆರೆ,",
+      "ಬಾನಿನ ತಾರೆ ಮಿನುಗಿದೆ;",
+      "ಕಾಡಿನ ನಡುವೆ ಜೊನ್ನಲ,",
+      "ನದಿಯು ಹರಿದು ಹಾಡಿದೆ.",
+      "",
+      "ಬೆಟ್ಟದ ತಡಿಯಲಿ ಹೂವಿದೆ,",
+      "ಕಣಿವೆಯ ತಳದಲಿ ನೀರಿದೆ."
+    ]
+  },
+  {
+    "id": 2,
+    "titleKannada": "ನಾಡಗೀತೆ",
+    "titleEnglish": "Song of the Land",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1952",
+    "category": "Patriotic",
+    "poetId": 1,
+    "verses": [
+      "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ,",
+      "ಜಯ ಹೇ ಕರ್ನಾಟಕ ಮಾತೆ.",
+      "",
+      "ಜಯ ಸುಂದರ ನದಿ ವನಗಳ ನಾಡೆ,",
+      "ಗಿರಿ ಕಂದರ ದುರ್ಗದ ಬೀಡೆ."
+    ]
+  },
+  {
+    "id": 3,
+    "titleKannada": "ಗರಿ",
+    "titleEnglish": "Feather",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1938",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ಹಾರುವ ಹಕ್ಕಿಯ ಗರಿ ಉದುರಿತು,",
+      "ಗಾಳಿಯಲಿ ತೇಲುತ ಇಳಿದಿತು.",
+      "",
+      "ನೆಲಕೆ ಬಿದ್ದರೂ ಮೇಲ್ಮುಖವಾಗಿ,",
+      "ತನ್ನ ಮೂಲವ ನೆನೆದಿತು."
+    ]
+  },
+  {
+    "id": 4,
+    "titleKannada": "ಬೆಳಕಿನ ಬೀಜ",
+    "titleEnglish": "Seed of Light",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1960",
+    "category": "Philosophical",
+    "poetId": 2,
+    "verses": [
+      "ಕತ್ತಲಲ್ಲಿ ಬಿದ್ದ ಬೀಜ,",
+      "ಬೆಳಕಿಗಾಗಿ ತವಕಿಸಿತು.",
+      "",
+      "ಮಣ್ಣ ಒಡೆದು ಮೇಲೆ ಬಂದು,",
+      "ಸೂರ್ಯನನ್ನು ನಮಿಸಿತು."
+    ]
+  },
+  {
+    "id": 5,
+    "titleKannada": "ಹೊಸ ಬೆಳಕು",
+    "titleEnglish": "New Light",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1955",
+    "category": "Devotional",
+    "poetId": 3,
+    "verses": [
+      "ಹೊಸ ಬೆಳಕು ಮೂಡಿದೆ ಪೂರ್ವದಲಿ,",
+      "ಕತ್ತಲೆಯ ಕಳೆದು ಹೋಯಿತು.",
+      "",
+      "ಮನದ ಮೂಲೆಯಲಿ ದೀಪ ಹಚ್ಚಿ,",
+      "ಜ್ಞಾನದ ಬೆಳಕು ಹರಡಿತು."
+    ]
+  },
+  {
+    "id": 6,
+    "titleKannada": "ಮಳೆ",
+    "titleEnglish": "The Rain",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1948",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಮಳೆ ಬಂತು ಮಳೆ ಬಂತು,",
+      "ಮಲೆನಾಡಿಗೆ ಮಳೆ ಬಂತು.",
+      "",
+      "ಹಸಿರು ತೊಟ್ಟು ಭೂಮಿ ನಕ್ಕು,",
+      "ನದಿಗಳೆಲ್ಲ ಹಾಡಿದವು."
+    ]
+  },
+  {
+    "id": 7,
+    "titleKannada": "ಅಂಬಿಕಾತನಯ",
+    "titleEnglish": "Son of Ambika",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1943",
+    "category": "Devotional",
+    "poetId": 2,
+    "verses": [
+      "ಅಂಬಿಕಾತನಯ ದತ್ತ ನಾನು,",
+      "ಶಕ್ತಿಯ ಮಗನು ಶಾಂತನು.",
+      "",
+      "ಪ್ರೇಮದಲಿ ನಿಂತು ನೋಡಿದೆನು,",
+      "ಜಗವೆಲ್ಲ ಬೆಳಕು ಕಂಡೆನು."
+    ]
+  },
+  {
+    "id": 8,
+    "titleKannada": "ಕಾಡಿನ ಕರೆ",
+    "titleEnglish": "Call of the Forest",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1950",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಕಾಡು ಕರೆಯುತಿದೆ ಬಾ ಎಂದು,",
+      "ಮರಗಳು ತೂಗುತ ಹೇಳಿದವು.",
+      "",
+      "ಹಕ್ಕಿಯ ದನಿಯಲಿ ರಾಗ ತೇಲಿ,",
+      "ಹೃದಯವ ತಣಿಸುತ ಸಾಗಿದವು."
+    ]
+  },
+  {
+    "id": 9,
+    "titleKannada": "ತಾಯಿ ಭೂಮಿ",
+    "titleEnglish": "Mother Earth",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1958",
+    "category": "Patriotic",
+    "poetId": 3,
+    "verses": [
+      "ತಾಯಿ ನೀನು ಭೂಮಿ ತಾಯಿ,",
+      "ನಿನ್ನ ಮಡಿಲಲಿ ನಾ ಬೆಳೆದೆ.",
+      "",
+      "ನಿನ್ನ ಮಣ್ಣಲಿ ಜನಿಸಿದೆ ನಾನು,",
+      "ನಿನ್ನಲ್ಲೇ ಲೀನವಾಗುವೆ."
+    ]
+  },
+  {
+    "id": 10,
+    "titleKannada": "ಪ್ರೀತಿಯ ಹಾಡು",
+    "titleEnglish": "Song of Love",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1965",
+    "category": "Classical",
+    "poetId": 2,
+    "verses": [
+      "ಪ್ರೀತಿ ಎಂದರೆ ಅದು ಹೂವು,",
+      "ಮನದ ತೋಟದಲಿ ಅರಳಿದ ಹೂವು.",
+      "",
+      "ಕಂಪು ತೇಲಿ ಬರುವ ಗಾಳಿ,",
+      "ಜೀವ ತಣಿಸುವ ಆ ಮಾಲಿ."
+    ]
+  },
+  {
+    "id": 11,
+    "titleKannada": "ನದಿಯ ಹಾಡು",
+    "titleEnglish": "Song of the River",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1947",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ನದಿಯು ಹರಿಯುತಿದೆ ತಣ್ಣಗೆ,",
+      "ಕಲ್ಲು ಮಣ್ಣ ನಡುವೆ ಹರಿದು.",
+      "",
+      "ಸಾಗರ ಸೇರುವ ಕನಸ ಹೊತ್ತು,",
+      "ಅವಿರತ ಮುಂದೆ ಸಾಗಿತು."
+    ]
+  },
+  {
+    "id": 12,
+    "titleKannada": "ಚಂದ್ರಮ",
+    "titleEnglish": "The Moon",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1962",
+    "category": "Classical",
+    "poetId": 3,
+    "verses": [
+      "ಚಂದ್ರ ಬಂದ ಆಗಸದಲಿ,",
+      "ಬೆಳದಿಂಗಳ ಚೆಲ್ಲಿ ನಗುತ.",
+      "",
+      "ತಾರೆಗಳ ನಡುವೆ ರಾಜನಾಗಿ,",
+      "ರಾತ್ರಿಯ ಕತ್ತಲ ಓಡಿಸುತ."
+    ]
+  },
+  {
+    "id": 13,
+    "titleKannada": "ವಸಂತ",
+    "titleEnglish": "Spring",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1940",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ವಸಂತ ಬಂದ ಹೂ ತಂದ,",
+      "ಮರ ಬಳ್ಳಿ ಚಿಗುರಿ ನಿಂತವು.",
+      "",
+      "ಕೋಗಿಲೆ ಹಾಡಿ ಮನ ತಣಿಸಿ,",
+      "ಬೇಸಿಗೆಯ ಬಿಸಿಲ ಮರೆಸಿತು."
+    ]
+  },
+  {
+    "id": 14,
+    "titleKannada": "ಮಕ್ಕಳ ಹಾಡು",
+    "titleEnglish": "Children's Song",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1953",
+    "category": "Classical",
+    "poetId": 1,
+    "verses": [
+      "ಮಕ್ಕಳೆಲ್ಲ ಒಂದಾಗಿ,",
+      "ಆಡಿ ನಲಿದು ಬಾಳೋಣ.",
+      "",
+      "ಜಾತಿ ಮತ ಮರೆತು ನಾವು,",
+      "ಒಂದೇ ತಾಯಿ ಮಕ್ಕಳಾಗೋಣ."
+    ]
+  },
+  {
+    "id": 15,
+    "titleKannada": "ಸೂರ್ಯೋದಯ",
+    "titleEnglish": "Sunrise",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1957",
+    "category": "Philosophical",
+    "poetId": 3,
+    "verses": [
+      "ಸೂರ್ಯ ಮೂಡಿದ ಪೂರ್ವದಲಿ,",
+      "ಕೆಂಪು ಬಣ್ಣ ಚೆಲ್ಲಿ ಬಂದ.",
+      "",
+      "ಕತ್ತಲೆಯ ಓಡಿಸಿ ಬೆಳಕ ತಂದ,",
+      "ಹೊಸ ದಿನದ ಆಶೆ ಹೊತ್ತು ಬಂದ."
+    ]
+  },
+  {
+    "id": 16,
+    "titleKannada": "ಪರ್ವತ",
+    "titleEnglish": "The Mountain",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1949",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಪರ್ವತ ನಿಂತಿದೆ ಧೀರನಾಗಿ,",
+      "ಗಾಳಿ ಮಳೆಗೆ ತಲೆ ಬಾಗದೆ.",
+      "",
+      "ಮೋಡ ಕವಿದರೂ ಜಗ್ಗದೆ ನಿಂತು,",
+      "ತನ್ನ ಗಾಂಭೀರ್ಯ ಮೆರೆಯಿತು."
+    ]
+  },
+  {
+    "id": 17,
+    "titleKannada": "ಗಾಳಿ",
+    "titleEnglish": "The Wind",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1942",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ಗಾಳಿ ಬೀಸಿ ಬಂತು ತಂಪಾಗಿ,",
+      "ಮರದ ಎಲೆ ತೂಗಿ ಆಡಿತು.",
+      "",
+      "ಹೂವಿನ ಕಂಪನು ಹೊತ್ತು ತಂದು,",
+      "ಮನಸಿಗೆ ಮುದವ ನೀಡಿತು."
+    ]
+  },
+  {
+    "id": 18,
+    "titleKannada": "ದೀಪ",
+    "titleEnglish": "The Lamp",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1963",
+    "category": "Devotional",
+    "poetId": 3,
+    "verses": [
+      "ದೀಪ ಉರಿಯಿತು ಕತ್ತಲೆಯಲಿ,",
+      "ಬೆಳಕ ಚೆಲ್ಲಿ ನಕ್ಕಿತು.",
+      "",
+      "ತನ್ನ ಜೀವವ ಕರಗಿಸಿಕೊಂಡು,",
+      "ಜಗವ ಬೆಳಗಿಸಿ ನಿಂತಿತು."
+    ]
+  },
+  {
+    "id": 19,
+    "titleKannada": "ಹಕ್ಕಿಯ ಹಾಡು",
+    "titleEnglish": "Bird's Song",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1946",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಹಕ್ಕಿ ಹಾಡಿತು ಬೆಳಿಗ್ಗೆ ಮೊದಲು,",
+      "ನಿದ್ದೆಯ ಕಣ್ಣನು ತೆರೆಸಿತು.",
+      "",
+      "ಸೂರ್ಯನ ಸ್ವಾಗತ ಮಾಡಿ ಹಾಡಿ,",
+      "ಮನಕೆ ಉತ್ಸಾಹ ತಂದಿತು."
+    ]
+  },
+  {
+    "id": 20,
+    "titleKannada": "ಕನ್ನಡ ನಾಡು",
+    "titleEnglish": "Land of Kannada",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1955",
+    "category": "Patriotic",
+    "poetId": 2,
+    "verses": [
+      "ಕನ್ನಡ ನಾಡು ಸುಂದರ ನಾಡು,",
+      "ಕಾವೇರಿ ತೀರದ ಹಸಿರು ನಾಡು.",
+      "",
+      "ಕನ್ನಡ ತಾಯಿಗೆ ಜಯವ ಹೇಳಿ,",
+      "ಹೃದಯದಿ ಗೌರವ ತುಂಬಿಕೊಳ್ಳಿ."
+    ]
+  },
+  {
+    "id": 21,
+    "titleKannada": "ಜೀವನ",
+    "titleEnglish": "Life",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1960",
+    "category": "Philosophical",
+    "poetId": 3,
+    "verses": [
+      "ಜೀವನ ಎಂದರೆ ಒಂದು ಹಾಡು,",
+      "ಸುಖ ದುಃಖದ ಸಂಗಮದ ಹಾಡು.",
+      "",
+      "ನಗುತ ಅಳುತ ಸಾಗುವ ಪಯಣ,",
+      "ಕೊನೆಗೆ ಮುಕ್ತಿಯ ಪಡೆಯುವ ಯಾನ."
+    ]
+  },
+  {
+    "id": 22,
+    "titleKannada": "ಆಕಾಶ",
+    "titleEnglish": "The Sky",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1951",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಆಕಾಶ ನೋಡಿ ಮನ ತೇಲಿತು,",
+      "ನೀಲಿ ಬಣ್ಣದ ಕಡಲಲಿ ಮುಳುಗಿತು.",
+      "",
+      "ಮೋಡ ತೇಲಿ ಹಾರಿ ಹೋಗಿ,",
+      "ಮನಸಿನ ಕನಸನು ಹೊತ್ತೊಯ್ದಿತು."
+    ]
+  },
+  {
+    "id": 23,
+    "titleKannada": "ಹಸಿರು",
+    "titleEnglish": "Greenery",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1958",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ಹಸಿರು ಹಸಿರು ಎಲ್ಲೆಡೆ ಹಸಿರು,",
+      "ಕಣ್ಣಿಗೆ ತಂಪಾದ ಹಸಿರು.",
+      "",
+      "ಮಳೆಯ ನೀರು ಕುಡಿದು ನಿಂತ,",
+      "ಭೂಮಿಯ ಸಿಂಗಾರದ ಹಸಿರು."
+    ]
+  },
+  {
+    "id": 24,
+    "titleKannada": "ಪ್ರಕೃತಿ",
+    "titleEnglish": "Nature",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1956",
+    "category": "Nature",
+    "poetId": 3,
+    "verses": [
+      "ಪ್ರಕೃತಿ ತಾಯಿ ಮಡಿಲಿನಲಿ,",
+      "ಮಕ್ಕಳಂತೆ ಆಡಿ ನಲಿದೆ.",
+      "",
+      "ಮರ ಗಿಡ ಹಕ್ಕಿ ನದಿ ಕಾಡು,",
+      "ಎಲ್ಲವೂ ನನ್ನ ಆಡಿಸಿದವು."
+    ]
+  },
+  {
+    "id": 25,
+    "titleKannada": "ಬಾಲ್ಯ",
+    "titleEnglish": "Childhood",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1944",
+    "category": "Classical",
+    "poetId": 1,
+    "verses": [
+      "ಬಾಲ್ಯದ ದಿನಗಳು ಚಿನ್ನದ ದಿನ,",
+      "ಮರಳಿ ಬಾರದ ಮಧುರ ದಿನ.",
+      "",
+      "ತಾಯಿ ಮಡಿಲಲಿ ಮಲಗಿ ನಿದ್ದೆ,",
+      "ಸ್ವರ್ಗದ ಸುಖವ ಅನುಭವಿಸಿದ ದಿನ."
+    ]
+  },
+  {
+    "id": 26,
+    "titleKannada": "ಶಿಕ್ಷಕ",
+    "titleEnglish": "The Teacher",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1950",
+    "category": "Classical",
+    "poetId": 2,
+    "verses": [
+      "ಶಿಕ್ಷಕ ನೀನು ದೇಶದ ಬೆಳಕು,",
+      "ಮಕ್ಕಳ ಮನಸಿಗೆ ಜ್ಞಾನದ ಹೊಳಕು.",
+      "",
+      "ತ್ಯಾಗ ಮಾಡಿ ಬೋಧಿಸಿ ಬಾಳಿ,",
+      "ಸಮಾಜವ ಕಟ್ಟಿದ ಮಹಾ ಸ್ವಾಮಿ."
+    ]
+  },
+  {
+    "id": 27,
+    "titleKannada": "ಸಂಜೆ",
+    "titleEnglish": "Evening",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1961",
+    "category": "Classical",
+    "poetId": 3,
+    "verses": [
+      "ಸಂಜೆ ಆಯಿತು ಸೂರ್ಯ ಮುಳುಗಿದ,",
+      "ಕೆಂಪು ಬಣ್ಣ ಮೂಡಿ ನಿಂತಿತು.",
+      "",
+      "ಹಕ್ಕಿ ಗೂಡಿಗೆ ಮರಳಿ ಬಂದವು,",
+      "ರಾತ್ರಿಯ ಮೌನ ಆವರಿಸಿತು."
+    ]
+  },
+  {
+    "id": 28,
+    "titleKannada": "ಮನಸು",
+    "titleEnglish": "The Mind",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1954",
+    "category": "Philosophical",
+    "poetId": 1,
+    "verses": [
+      "ಮನಸು ಎಂದರೆ ಒಂದು ಕಡಲು,",
+      "ಆಳ ಅಗಲ ತಿಳಿಯದ ಕಡಲು.",
+      "",
+      "ಭಾವ ತರಂಗ ಉಕ್ಕಿ ಬರುತ,",
+      "ಒಳ ಹೊಕ್ಕು ತಡೆಯಲಾಗದ ಕಡಲು."
+    ]
+  },
+  {
+    "id": 29,
+    "titleKannada": "ಕಾರ್ಮೋಡ",
+    "titleEnglish": "Dark Cloud",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1945",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ಕಾರ್ಮೋಡ ಕವಿದು ಬಂತು,",
+      "ಮಳೆಯ ಸಿಂಚನ ಹೊತ್ತು ಬಂತು.",
+      "",
+      "ಬಿಸಿಲ ಬೇಗೆಯ ತಣಿಸಲೆಂದು,",
+      "ಧಾರಾಕಾರ ಸುರಿದು ಬಂತು."
+    ]
+  },
+  {
+    "id": 30,
+    "titleKannada": "ಅಮ್ಮ",
+    "titleEnglish": "Mother",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1964",
+    "category": "Classical",
+    "poetId": 3,
+    "verses": [
+      "ಅಮ್ಮ ನೀನು ದೇವರಿಗಿಂತ ದೊಡ್ಡವಳು,",
+      "ಪ್ರೀತಿಯ ಸಾಗರ ನೀನು ಹಿರಿಯವಳು.",
+      "",
+      "ನಿನ್ನ ಮಡಿಲೇ ನನ್ನ ಸ್ವರ್ಗ,",
+      "ನಿನ್ನ ನಗುವೇ ನನ್ನ ಭಾಗ್ಯ."
+    ]
+  },
+  {
+    "id": 31,
+    "titleKannada": "ಕನ್ನಡ ಭಾಷೆ",
+    "titleEnglish": "Kannada Language",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1956",
+    "category": "Patriotic",
+    "poetId": 1,
+    "verses": [
+      "ಕನ್ನಡ ನುಡಿ ಅಮೃತದ ನುಡಿ,",
+      "ಕೇಳಲು ಇಂಪಾದ ಸಿಹಿಯ ನುಡಿ.",
+      "",
+      "ಸಾವಿರ ವರ್ಷದ ಪರಂಪರೆಯ,",
+      "ಸೊಗಡಿನ ಸಂಸ್ಕೃತಿಯ ನುಡಿ."
+    ]
+  },
+  {
+    "id": 32,
+    "titleKannada": "ರಾತ್ರಿ",
+    "titleEnglish": "The Night",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1948",
+    "category": "Classical",
+    "poetId": 2,
+    "verses": [
+      "ರಾತ್ರಿ ಬಂತು ತಾರೆ ಮಿನುಗಿದವು,",
+      "ನಿಶ್ಯಬ್ದ ಜಗದಲಿ ಮೌನ ತುಂಬಿತು.",
+      "",
+      "ಚಂದ್ರ ಬೆಳದಿಂಗಳ ಚೆಲ್ಲಿ ನಿಂತ,",
+      "ಸಕಲ ಜೀವಿಗೆ ಶಾಂತಿ ನೀಡಿದ."
+    ]
+  },
+  {
+    "id": 33,
+    "titleKannada": "ಸ್ವಾತಂತ್ರ್ಯ",
+    "titleEnglish": "Freedom",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1947",
+    "category": "Patriotic",
+    "poetId": 3,
+    "verses": [
+      "ಸ್ವಾತಂತ್ರ್ಯ ಬಂತು ಭಾರತಕೆ,",
+      "ಹೊಸ ಬೆಳಕು ಮೂಡಿ ಬಂತು.",
+      "",
+      "ತ್ಯಾಗಿಗಳ ಬಲಿದಾನ ಫಲ ನೀಡಿ,",
+      "ಸ್ವಾತಂತ್ರ್ಯದ ಹಕ್ಕಿ ಹಾರಿ ಬಂತು."
+    ]
+  },
+  {
+    "id": 34,
+    "titleKannada": "ಹೊಳೆ",
+    "titleEnglish": "The Stream",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1943",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಹೊಳೆ ಹರಿಯಿತು ಕಲಕಲ ದನಿಯಲಿ,",
+      "ಕಲ್ಲ ನಡುವೆ ಕುಣಿದು ಹರಿದು.",
+      "",
+      "ಹೂ ತೇಲಿಸಿ ಮುಂದೆ ಸಾಗಿ,",
+      "ಸಮುದ್ರ ಸೇರಲು ಹಂಬಲಿಸಿ."
+    ]
+  },
+  {
+    "id": 35,
+    "titleKannada": "ಜ್ಞಾನ",
+    "titleEnglish": "Knowledge",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1952",
+    "category": "Philosophical",
+    "poetId": 2,
+    "verses": [
+      "ಜ್ಞಾನ ದೀಪ ಹಚ್ಚಿ ಓದು,",
+      "ಅಜ್ಞಾನ ಕತ್ತಲ ಓಡಿಸು.",
+      "",
+      "ವಿದ್ಯೆ ಎಂಬ ಆಯುಧ ಹಿಡಿದು,",
+      "ಜೀವನ ಸಮರ ಗೆಲ್ಲು ಮುಂದೆ."
+    ]
+  },
+  {
+    "id": 36,
+    "titleKannada": "ಭರವಸೆ",
+    "titleEnglish": "Hope",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1959",
+    "category": "Philosophical",
+    "poetId": 3,
+    "verses": [
+      "ಭರವಸೆ ಇಟ್ಟು ಬಾಳು ಮುಂದೆ,",
+      "ನಿರಾಶೆ ಬಿಟ್ಟು ಸಾಗು ಮುಂದೆ.",
+      "",
+      "ಕತ್ತಲ ಕಳೆದು ಬೆಳಕು ಬರುವ,",
+      "ಹೊಸ ಹೊಂಗನಸ ಹೊತ್ತು ಸಾಗು."
+    ]
+  },
+  {
+    "id": 37,
+    "titleKannada": "ಸಾಗರ",
+    "titleEnglish": "The Ocean",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1958",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಸಾಗರ ನೋಡಲು ಮನ ಸೋಲಿತು,",
+      "ಅಲೆ ಅಲೆಯಾಗಿ ತೆರೆ ಬಂತು.",
+      "",
+      "ಆಳ ಅಗಲ ತಿಳಿಯದ ಕಡಲು,",
+      "ಜೀವನದ ರಹಸ್ಯ ತಿಳಿಸಿತು."
+    ]
+  },
+  {
+    "id": 38,
+    "titleKannada": "ಸ್ನೇಹ",
+    "titleEnglish": "Friendship",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1962",
+    "category": "Classical",
+    "poetId": 2,
+    "verses": [
+      "ಸ್ನೇಹ ಎಂದರೆ ಸಿಹಿ ಬಂಧ,",
+      "ಎಂದೂ ಕಳಚದ ಅನುಬಂಧ.",
+      "",
+      "ಸುಖ ದುಃಖದಲಿ ಜೊತೆ ನಿಲ್ಲುವ,",
+      "ಜೀವದ ಜೀವವಾಗುವ ಬಂಧ."
+    ]
+  },
+  {
+    "id": 39,
+    "titleKannada": "ಕೃಷ್ಣ",
+    "titleEnglish": "Krishna",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1966",
+    "category": "Devotional",
+    "poetId": 3,
+    "verses": [
+      "ಕೃಷ್ಣ ಬಾ ಬಾ ಕೊಳಲ ತಂದು,",
+      "ಮನ ಮೋಹಿಸುವ ರಾಗ ನುಡಿಸು.",
+      "",
+      "ಗೋಕುಲದ ಗೋಪಾಲ ನೀನು,",
+      "ಜಗದ ಜೀವ ನೀನೇ ಆದೆ."
+    ]
+  },
+  {
+    "id": 40,
+    "titleKannada": "ಮೌನ",
+    "titleEnglish": "Silence",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1960",
+    "category": "Philosophical",
+    "poetId": 1,
+    "verses": [
+      "ಮೌನದಲಿ ಮಾತಿದೆ ಆಳದಲ್ಲಿ,",
+      "ಶಬ್ದಕ್ಕೆ ಮಿಗಿಲಾದ ಭಾಷೆ ಅದು.",
+      "",
+      "ನಿಶ್ಯಬ್ದದ ನಡುವೆ ತಾನೇ ಮಾತಾಡಿ,",
+      "ಆತ್ಮಕ್ಕೆ ಶಾಂತಿ ನೀಡುವ ನುಡಿ."
+    ]
+  },
+  {
+    "id": 41,
+    "titleKannada": "ದೇಶ ಪ್ರೇಮ",
+    "titleEnglish": "Patriotism",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1957",
+    "category": "Patriotic",
+    "poetId": 2,
+    "verses": [
+      "ದೇಶ ಪ್ರೇಮ ಮನದಲಿ ತುಂಬಿ,",
+      "ತ್ಯಾಗ ಮಾಡಲು ಸದಾ ಸಿದ್ಧ.",
+      "",
+      "ಭಾರತ ಮಾತೆಗೆ ಮಾಡಿ ಸೇವೆ,",
+      "ಜೀವನ ಸಾರ್ಥಕ ಮಾಡಿಕೊಳ್ಳಿ."
+    ]
+  },
+  {
+    "id": 42,
+    "titleKannada": "ಶಾಂತಿ",
+    "titleEnglish": "Peace",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1968",
+    "category": "Devotional",
+    "poetId": 3,
+    "verses": [
+      "ಶಾಂತಿ ಬೇಕು ಜಗಕೆ ಶಾಂತಿ,",
+      "ಮನದ ಮೂಲದಲಿ ತುಂಬಲಿ ಶಾಂತಿ.",
+      "",
+      "ದ್ವೇಷ ಕ್ರೋಧ ಬಿಟ್ಟು ಪ್ರೀತಿ ತುಂಬಿ,",
+      "ಒಳ್ಳೆ ಜಗ ಕಟ್ಟೋಣ ಬನ್ನಿ."
+    ]
+  },
+  {
+    "id": 43,
+    "titleKannada": "ಕಾವ್ಯ",
+    "titleEnglish": "Poetry",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1962",
+    "category": "Classical",
+    "poetId": 1,
+    "verses": [
+      "ಕಾವ್ಯ ಎಂದರೆ ಜೀವನದ ಕನ್ನಡಿ,",
+      "ಭಾವ ಭಾಷೆಯ ಸಂಗಮದ ಕನ್ನಡಿ.",
+      "",
+      "ಮನಸ ಮಾತನು ಅಕ್ಷರದಿ ಇಟ್ಟು,",
+      "ಜಗಕೆ ತೋರುವ ಸುಂದರ ಕನ್ನಡಿ."
+    ]
+  },
+  {
+    "id": 44,
+    "titleKannada": "ಮಣ್ಣು",
+    "titleEnglish": "The Soil",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1953",
+    "category": "Patriotic",
+    "poetId": 2,
+    "verses": [
+      "ಮಣ್ಣು ನಮ್ಮ ತಾಯಿ ಮಣ್ಣು,",
+      "ಈ ಮಣ್ಣಲಿ ಹುಟ್ಟಿ ಬೆಳೆದೆ.",
+      "",
+      "ಈ ಮಣ್ಣಿನ ಸಾಲ ತೀರಿಸಲು,",
+      "ದುಡಿದು ದಣಿವೆ ಸದಾ ಕಾಲ."
+    ]
+  },
+  {
+    "id": 45,
+    "titleKannada": "ಯೌವನ",
+    "titleEnglish": "Youth",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1954",
+    "category": "Classical",
+    "poetId": 3,
+    "verses": [
+      "ಯೌವನ ಎಂದರೆ ಹೊಸ ಬೆಳಕು,",
+      "ಉತ್ಸಾಹ ಉಮೇದಿನ ಹೊಳಕು.",
+      "",
+      "ಸಾಧನೆ ಮಾಡಿ ಮೇಲೆ ಏರು,",
+      "ಇತಿಹಾಸ ಬರೆಯಲು ಮುಂದೆ ನಡೆ."
+    ]
+  },
+  {
+    "id": 46,
+    "titleKannada": "ಕಾಡು ಮಲ್ಲಿಗೆ",
+    "titleEnglish": "Wild Jasmine",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1941",
+    "category": "Nature",
+    "poetId": 1,
+    "verses": [
+      "ಕಾಡ ಮಲ್ಲಿಗೆ ಅರಳಿ ನಿಂತು,",
+      "ಪರಿಮಳ ಹರಡಿ ನಗುತಿದೆ.",
+      "",
+      "ಯಾರ ಕಣ್ಣಿಗೂ ಬೀಳದಿದ್ದರೂ,",
+      "ಅದರ ಸೊಬಗು ಮನ ಸೆಳೆಯಿತು."
+    ]
+  },
+  {
+    "id": 47,
+    "titleKannada": "ಬೆಟ್ಟದ ಮೇಲೆ",
+    "titleEnglish": "On the Hill",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1946",
+    "category": "Nature",
+    "poetId": 2,
+    "verses": [
+      "ಬೆಟ್ಟದ ಮೇಲೆ ನಿಂತು ನೋಡಲು,",
+      "ಜಗ ಎಷ್ಟು ಸಣ್ಣದಾಗಿ ಕಾಣಿತು.",
+      "",
+      "ಎತ್ತರಕೆ ಏರಿ ನೋಡಿದಾಗ,",
+      "ಜೀವನದ ಸತ್ಯ ಅರ್ಥವಾಯಿತು."
+    ]
+  },
+  {
+    "id": 48,
+    "titleKannada": "ಧ್ಯಾನ",
+    "titleEnglish": "Meditation",
+    "authorKannada": "ಪು.ತಿ. ನರಸಿಂಹಾಚಾರ್",
+    "authorEnglish": "Pu.Ti.Na",
+    "year": "1970",
+    "category": "Devotional",
+    "poetId": 3,
+    "verses": [
+      "ಧ್ಯಾನ ಮಾಡು ಮನ ಶಾಂತಿ ಪಡೆ,",
+      "ಆತ್ಮದ ಆಳ ತಿಳಿದುಕೋ.",
+      "",
+      "ದೇಹ ಮನ ಆತ್ಮ ಒಂದಾಗಿ,",
+      "ಪರಮಾತ್ಮನಲಿ ಲೀನವಾಗು."
+    ]
+  },
+  {
+    "id": 49,
+    "titleKannada": "ಸ್ಮರಣೆ",
+    "titleEnglish": "Memory",
+    "authorKannada": "ಕುವೆಂಪು",
+    "authorEnglish": "Kuvempu",
+    "year": "1963",
+    "category": "Classical",
+    "poetId": 1,
+    "verses": [
+      "ಹಳೆಯ ನೆನಪು ಮನದಲಿ ಉಳಿದು,",
+      "ಮಧುರ ಭಾವ ತುಂಬಿ ಕೊಡುತ.",
+      "",
+      "ಮರೆತ ದಿನಗಳ ಮತ್ತೆ ತಂದು,",
+      "ಕಣ್ಣ ಮುಂದೆ ನಿಲ್ಲಿಸಿ ಹೋಗುತ."
+    ]
+  },
+  {
+    "id": 50,
+    "titleKannada": "ಕನ್ನಡ ಅಮ್ಮ",
+    "titleEnglish": "Mother Kannada",
+    "authorKannada": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+    "authorEnglish": "D.R. Bendre",
+    "year": "1967",
+    "category": "Patriotic",
+    "poetId": 2,
+    "verses": [
+      "ಕನ್ನಡ ಅಮ್ಮ ನಿನಗೆ ನಮನ,",
+      "ನಿನ್ನ ಮಕ್ಕಳ ಮನದ ವಂದನ.",
+      "",
+      "ನಿನ್ನ ಭಾಷೆಯ ಉಳಿಸಿ ಬೆಳೆಸಿ,",
+      "ನಿನ್ನ ಹೆಸರನು ಚಿರ ಮಾಡುವೆ."
+    ]
+  }
+]
