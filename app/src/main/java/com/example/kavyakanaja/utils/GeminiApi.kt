@@ -1,5 +1,6 @@
 package com.example.kavyakanaja.utils
 
+import android.util.Log
 import com.example.kavyakanaja.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -13,11 +14,11 @@ import java.util.concurrent.TimeUnit
 
 object GeminiApi {
 
-    private val API_KEY: String get() = BuildConfig.GEMINI_API_KEY
+    private val API_KEY: String
+        get() = BuildConfig.GEMINI_API_KEY
 
     private const val BASE_URL =
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
     private val client = OkHttpClient.Builder()
         .connectTimeout(20, TimeUnit.SECONDS)
         .readTimeout(20, TimeUnit.SECONDS)
@@ -25,61 +26,58 @@ object GeminiApi {
         .build()
 
     private fun buildBody(prompt: String): okhttp3.RequestBody {
+
         val json = JSONObject().apply {
+
             put("contents", JSONArray().apply {
+
                 put(JSONObject().apply {
+
                     put("parts", JSONArray().apply {
-                        put(JSONObject().apply { put("text", prompt) })
+
+                        put(JSONObject().apply {
+
+                            put("text", prompt)
+
+                        })
                     })
                 })
             })
         }
-        return json.toString().toRequestBody("application/json".toMediaType())
+
+        return json.toString()
+            .toRequestBody("application/json".toMediaType())
     }
 
     private fun parseResponse(body: String): String {
-        return JSONObject(body)
-            .getJSONArray("candidates")
-            .getJSONObject(0)
-            .getJSONObject("content")
-            .getJSONArray("parts")
-            .getJSONObject(0)
-            .getString("text")
-            .trim()
-    }
 
-    suspend fun getWordMeaning(word: String): String = withContext(Dispatchers.IO) {
-        try {
-            val prompt = """
-                The word "$word" is from a classical Kannada poem.
-                Explain in 2-3 simple sentences what this word means in English
-                and how it is used poetically. No bullet points. No markdown.
-            """.trimIndent()
+        return try {
 
-            val request = Request.Builder()
-                .url("$BASE_URL?key=$API_KEY")
-                .post(buildBody(prompt))
-                .addHeader("Content-Type", "application/json")
-                .build()
+            JSONObject(body)
+                .getJSONArray("candidates")
+                .getJSONObject(0)
+                .getJSONObject("content")
+                .getJSONArray("parts")
+                .getJSONObject(0)
+                .getString("text")
+                .trim()
 
-            val response = client.newCall(request).execute()
-            val responseBody = response.body?.string() ?: return@withContext "No response."
-            if (!response.isSuccessful) return@withContext "Error ${response.code}: Check API key."
-            parseResponse(responseBody)
         } catch (e: Exception) {
-            "Error: ${e.message}"
+
+            Log.e("GeminiAPI", "Response parse failed", e)
+
+            "Failed to parse AI response."
         }
     }
 
-    suspend fun getPoemSummary(poemTitle: String, verses: List<String>): String =
+    private suspend fun sendPrompt(prompt: String): String =
         withContext(Dispatchers.IO) {
+
             try {
-                val verseText = verses.filter { it.isNotEmpty() }.joinToString(" / ")
-                val prompt = """
-                    This classical Kannada poem is titled "$poemTitle": $verseText
-                    Write a 3 sentence simple explanation of its meaning and emotion
-                    for a college student. No bullet points. No markdown.
-                """.trimIndent()
+
+                if (API_KEY.isBlank()) {
+                    return@withContext "Gemini API key missing."
+                }
 
                 val request = Request.Builder()
                     .url("$BASE_URL?key=$API_KEY")
@@ -87,12 +85,77 @@ object GeminiApi {
                     .addHeader("Content-Type", "application/json")
                     .build()
 
+                Log.d("GeminiAPI", "Sending request...")
+
                 val response = client.newCall(request).execute()
-                val responseBody = response.body?.string() ?: return@withContext "No response."
-                if (!response.isSuccessful) return@withContext "Error ${response.code}: Check API key."
+
+                val responseBody = response.body?.string()
+
+                Log.d("GeminiAPI", "Response code: ${response.code}")
+                Log.d("GeminiAPI", "Response body: $responseBody")
+
+                if (!response.isSuccessful) {
+
+                    return@withContext buildString {
+
+                        append("API Error ${response.code}")
+
+                        if (!responseBody.isNullOrBlank()) {
+                            append("\n")
+                            append(responseBody)
+                        }
+                    }
+                }
+
+                if (responseBody.isNullOrBlank()) {
+                    return@withContext "Empty response from Gemini API."
+                }
+
                 parseResponse(responseBody)
+
             } catch (e: Exception) {
+
+                Log.e("GeminiAPI", "Request failed", e)
+
                 "Error: ${e.message}"
             }
         }
+
+    suspend fun getWordMeaning(word: String): String {
+
+        val prompt = """
+            The word "$word" is from a classical Kannada poem.
+            Explain in 2-3 simple sentences what this word means in English
+            and how it is used poetically.
+            No bullet points.
+            No markdown.
+        """.trimIndent()
+
+        return sendPrompt(prompt)
+    }
+
+    suspend fun getPoemSummary(
+        poemTitle: String,
+        verses: List<String>
+    ): String {
+
+        val verseText = verses
+            .filter { it.isNotBlank() }
+            .joinToString(" / ")
+
+        val prompt = """
+            This classical Kannada poem is titled "$poemTitle".
+
+            Poem:
+            $verseText
+
+            Write a simple 3 sentence explanation of the meaning,
+            theme, and emotional tone for a college student.
+
+            No bullet points.
+            No markdown.
+        """.trimIndent()
+
+        return sendPrompt(prompt)
+    }
 }
